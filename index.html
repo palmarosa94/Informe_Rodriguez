@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Agustina Rodríguez | Oct-Dic 2025</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts (Cairo & Open Sans as per Branding) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rivadavia: {
+                            blue1: '#0085DD',
+                            blue2: '#00BBDE',
+                            blue3: '#0067BE',
+                            pink: '#E63690',
+                            green: '#00B27B',
+                            purple: '#B37CC4',
+                            yellow: '#F2A900',
+                            gray: '#F5F7FA'
+                        }
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                        'opensans': ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Open Sans', sans-serif; background-color: #F5F7FA; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Cairo', sans-serif; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.2s; page-break-inside: avoid; break-inside: avoid; }
+        .card:hover { transform: translateY(-2px); }
+        .gradient-header { background: linear-gradient(135deg, #0067BE 0%, #0085DD 100%); }
+        .gradient-header-green { background: linear-gradient(135deg, #00B27B 0%, #00d494 100%); }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white; }
+            .card { box-shadow: none; border: 1px solid #e2e8f0; }
+            main { padding-top: 20px !important; }
+            nav { position: relative !important; box-shadow: none !important; border-bottom: 2px solid #0085DD; }
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header / Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <!-- Logo Mockup based on Rivadavia -->
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-2xl font-bold text-rivadavia-blue3 tracking-tight">RIVADAVIA</span>
+                        <span class="text-xs font-semibold text-rivadavia-blue1 tracking-widest uppercase">Seguros</span>
+                    </div>
+                    <div class="hidden md:block w-px h-8 bg-gray-300 mx-6"></div>
+                    <div class="hidden md:block">
+                        <h1 class="text-xl font-bold text-slate-700">Informe de Gestión</h1>
+                        <p class="text-xs text-slate-500 font-semibold">Agustina Rodríguez</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="px-3 py-1 rounded-full bg-rivadavia-blue1/10 text-rivadavia-blue1 text-sm font-semibold">
+                        <i class="far fa-calendar-alt mr-2"></i>Oct - Dic 2025
+                    </span>
+                    <!-- Print Button -->
+                    <button onclick="window.print()" class="no-print bg-rivadavia-blue1 hover:bg-rivadavia-blue3 text-white font-bold py-2 px-4 rounded-lg shadow transition-colors flex items-center">
+                        <i class="fas fa-print mr-2"></i> Imprimir / PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
+
+        <!-- Executive Summary Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Total Asignados -->
+            <div class="card p-6 border-l-4 border-rivadavia-blue3">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-sm font-semibold text-slate-500 uppercase">Casos Asignados</p>
+                        <h3 class="text-4xl font-bold text-slate-800 mt-1">213</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center">
+                            Total Ingresos Trimestrales
+                        </p>
+                    </div>
+                    <div class="p-3 bg-rivadavia-blue3/10 rounded-full text-rivadavia-blue3">
+                        <i class="fas fa-inbox text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resoluciones -->
+            <div class="card p-6 border-l-4 border-rivadavia-green">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-sm font-semibold text-slate-500 uppercase">Casos Gestionados</p>
+                        <h3 class="text-4xl font-bold text-slate-800 mt-1">270</h3>
+                        <p class="text-xs text-green-600 mt-1 font-semibold">
+                            Total Bajas / Resoluciones
+                        </p>
+                    </div>
+                    <div class="p-3 bg-rivadavia-green/10 rounded-full text-rivadavia-green">
+                        <i class="fas fa-clipboard-check text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conciliados KPI -->
+            <div class="card p-6 border-l-4 border-rivadavia-pink bg-pink-50/50">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-sm font-semibold text-rivadavia-pink uppercase">Éxito en Conciliación</p>
+                        <h3 class="text-4xl font-bold text-slate-800 mt-1">27</h3>
+                        <p class="text-xs text-rivadavia-pink mt-1 font-bold">
+                            Casos Cerrados con Acuerdo
+                        </p>
+                    </div>
+                    <div class="p-3 bg-rivadavia-pink/20 rounded-full text-rivadavia-pink">
+                        <i class="fas fa-handshake text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section: Ingresos -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Chart 1: Ingresos por Jurisdicción Detallado por MES -->
+            <div class="card p-6">
+                <h3 class="text-lg font-bold text-slate-800 mb-4 border-b pb-2 border-slate-100 flex items-center">
+                    <span class="w-2 h-6 bg-rivadavia-blue1 mr-2 rounded-sm"></span> Ingresos por Jurisdicción (Mensual)
+                </h3>
+                <div class="h-64">
+                    <canvas id="ingresosChart"></canvas>
+                </div>
+                <div class="mt-4 flex justify-around text-center text-sm">
+                    <div>
+                        <span class="block font-bold text-xl text-rivadavia-blue3">98</span>
+                        <span class="text-gray-500">San Isidro (B07)</span>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-xl text-rivadavia-blue3">115</span>
+                        <span class="text-gray-500">San Martín (B09)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chart 2: Top Motivos de Baja -->
+            <div class="card p-6">
+                <h3 class="text-lg font-bold text-slate-800 mb-4 border-b pb-2 border-slate-100 flex items-center">
+                    <span class="w-2 h-6 bg-rivadavia-green mr-2 rounded-sm"></span> Principales Motivos de Cierre
+                </h3>
+                <div class="h-64 flex justify-center">
+                    <canvas id="motivosChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detalle de INGRESOS (Tablas compactas) -->
+        <div class="card overflow-hidden">
+            <div class="gradient-header px-6 py-4 text-white">
+                <h2 class="text-lg font-bold uppercase tracking-wider"><i class="fas fa-arrow-circle-right mr-2"></i> Detalle de Ingresos (Nuevos Casos)</h2>
+            </div>
+            <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- San Isidro Table -->
+                <div>
+                    <h4 class="text-rivadavia-blue3 font-bold mb-3 border-b border-gray-200 pb-2">Jurisdicción San Isidro (B07)</h4>
+                    <table class="min-w-full text-sm">
+                        <thead class="bg-gray-50 text-gray-500">
+                            <tr>
+                                <th class="text-left py-2 px-2">Empresa</th>
+                                <th class="text-center py-2">Oct</th>
+                                <th class="text-center py-2">Nov</th>
+                                <th class="text-center py-2">Dic</th>
+                                <th class="text-center py-2 font-bold text-rivadavia-blue1">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr>
+                                <td class="py-2 px-2">Mutual</td>
+                                <td class="text-center">6</td><td class="text-center">3</td><td class="text-center">8</td>
+                                <td class="text-center font-bold">17</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-2">Cooperativa</td>
+                                <td class="text-center">35</td><td class="text-center">24</td><td class="text-center">22</td>
+                                <td class="text-center font-bold">81</td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="bg-blue-50 font-bold">
+                            <tr>
+                                <td class="py-2 px-2">Total B07</td>
+                                <td class="text-center">41</td><td class="text-center">27</td><td class="text-center">30</td>
+                                <td class="text-center text-rivadavia-blue3 text-lg">98</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- San Martín Table -->
+                <div>
+                    <h4 class="text-rivadavia-blue3 font-bold mb-3 border-b border-gray-200 pb-2">Jurisdicción San Martín (B09)</h4>
+                    <table class="min-w-full text-sm">
+                        <thead class="bg-gray-50 text-gray-500">
+                            <tr>
+                                <th class="text-left py-2 px-2">Empresa</th>
+                                <th class="text-center py-2">Oct</th>
+                                <th class="text-center py-2">Nov</th>
+                                <th class="text-center py-2">Dic</th>
+                                <th class="text-center py-2 font-bold text-rivadavia-blue1">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr>
+                                <td class="py-2 px-2">Mutual</td>
+                                <td class="text-center">5</td><td class="text-center">11</td><td class="text-center">3</td>
+                                <td class="text-center font-bold">19</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-2">Cooperativa</td>
+                                <td class="text-center">33</td><td class="text-center">34</td><td class="text-center">29</td>
+                                <td class="text-center font-bold">96</td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="bg-blue-50 font-bold">
+                            <tr>
+                                <td class="py-2 px-2">Total B09</td>
+                                <td class="text-center">38</td><td class="text-center">45</td><td class="text-center">32</td>
+                                <td class="text-center text-rivadavia-blue3 text-lg">115</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detalle de BAJAS (Tablas detalladas) -->
+        <div class="card overflow-hidden">
+            <div class="gradient-header-green px-6 py-4 text-white">
+                <h2 class="text-lg font-bold uppercase tracking-wider"><i class="fas fa-file-export mr-2"></i> Detalle de Bajas (Resoluciones)</h2>
+            </div>
+            
+            <div class="p-6">
+                <!-- COOPERATIVA BAJAS -->
+                <div class="mb-8">
+                    <h3 class="text-rivadavia-blue3 font-bold text-lg mb-4 flex items-center">
+                        <i class="fas fa-building mr-2"></i> Cooperativa
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-sm divide-y divide-gray-200 border">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="px-4 py-2 text-left">Motivo de Baja</th>
+                                    <th class="px-4 py-2 text-center text-gray-500">San Isidro (B07)</th>
+                                    <th class="px-4 py-2 text-center text-gray-500">San Martín (B09)</th>
+                                    <th class="px-4 py-2 text-center font-bold text-rivadavia-green">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y">
+                                <!-- Filas consolidadas para mejor visualización -->
+                                <tr>
+                                    <td class="px-4 py-2 font-medium">Desinterés del Reclamante</td>
+                                    <td class="text-center">48</td>
+                                    <td class="text-center">53</td>
+                                    <td class="text-center font-bold bg-green-50">101</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 font-medium">Con Causa Judicial</td>
+                                    <td class="text-center">22</td>
+                                    <td class="text-center">26</td>
+                                    <td class="text-center font-bold bg-green-50">48</td>
+                                </tr>
+                                <tr class="bg-pink-50">
+                                    <td class="px-4 py-2 font-bold text-rivadavia-pink"><i class="fas fa-check mr-1"></i> Conciliado</td>
+                                    <td class="text-center font-bold text-rivadavia-pink">4</td>
+                                    <td class="text-center font-bold text-rivadavia-pink">21</td>
+                                    <td class="text-center font-bold text-rivadavia-pink">25</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 font-medium">Rechazo (Falta Resp / Ant Stro / Decisión)</td>
+                                    <td class="text-center">9</td> <!-- Sum of relevant causes -->
+                                    <td class="text-center">19</td> <!-- Sum -->
+                                    <td class="text-center font-bold bg-green-50">28</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 font-medium text-gray-500">Otros (Admin / Sin Intención)</td>
+                                    <td class="text-center">18</td>
+                                    <td class="text-center">27</td>
+                                    <td class="text-center font-bold bg-green-50">45</td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="bg-gray-50 font-bold border-t-2 border-gray-300">
+                                <tr>
+                                    <td class="px-4 py-2">TOTAL COOPERATIVA</td>
+                                    <td class="text-center">101</td>
+                                    <td class="text-center">146</td>
+                                    <td class="text-center text-rivadavia-green text-lg">247</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- MUTUAL BAJAS -->
+                <div>
+                    <h3 class="text-rivadavia-blue3 font-bold text-lg mb-4 flex items-center">
+                        <i class="fas fa-users mr-2"></i> Mutual
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Mutual San Isidro -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-bold text-sm mb-2 text-center">San Isidro (B07)</h5>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex justify-between"><span>Duplicado/Mal Ingresado</span> <span class="font-bold">5</span></li>
+                                <li class="flex justify-between"><span>Causa Judicial</span> <span class="font-bold">5</span></li>
+                                <li class="flex justify-between"><span>No Seguro</span> <span class="font-bold">2</span></li>
+                                <li class="flex justify-between border-t border-gray-300 pt-1 mt-1 font-bold text-rivadavia-green"><span>Total</span> <span>12</span></li>
+                            </ul>
+                        </div>
+                        <!-- Mutual San Martín -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-bold text-sm mb-2 text-center">San Martín (B09)</h5>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex justify-between"><span>Duplicado/Mal Ingresado</span> <span class="font-bold">8</span></li>
+                                <li class="flex justify-between text-rivadavia-pink font-bold"><span>Transado (Acuerdo)</span> <span>2</span></li>
+                                <li class="flex justify-between"><span>Causa Judicial</span> <span class="font-bold">1</span></li>
+                                <li class="flex justify-between border-t border-gray-300 pt-1 mt-1 font-bold text-rivadavia-green"><span>Total</span> <span>11</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-cairo font-bold text-lg mb-2">RIVADAVIA SEGUROS</p>
+            <p class="text-slate-400 text-sm">Informe de Gestión | Octubre - Diciembre 2025</p>
+        </div>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        // Chart 1: Ingresos Comparativa (Stacked Bar by Month)
+        // Datos San Isidro: Oct (41), Nov (27), Dic (30)
+        // Datos San Martín: Oct (38), Nov (45), Dic (32)
+        const ctx1 = document.getElementById('ingresosChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['San Isidro (B07)', 'San Martín (B09)'],
+                datasets: [
+                    {
+                        label: 'Octubre',
+                        data: [41, 38],
+                        backgroundColor: '#0085DD', // Rivadavia Blue 1
+                        borderRadius: 2
+                    },
+                    {
+                        label: 'Noviembre',
+                        data: [27, 45],
+                        backgroundColor: '#00B27B', // Rivadavia Green
+                        borderRadius: 2
+                    },
+                    {
+                        label: 'Diciembre',
+                        data: [30, 32],
+                        backgroundColor: '#E63690', // Rivadavia Pink
+                        borderRadius: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                    }
+                },
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: { stacked: true, beginAtZero: true }
+                }
+            }
+        });
+
+        // Chart 2: Motivos de Baja (Doughnut)
+        // Aggregated Data: 
+        // Desinterés: 101, Judicial: 54 (22+26+5+1), Conciliado/Transado: 27, Duplicados: 15, Otros: Resto
+        const ctx2 = document.getElementById('motivosChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Desinterés del Reclamante', 'Causa Judicial', 'Conciliados/Acuerdos', 'Duplicado/Admin', 'Otros Rechazos'],
+                datasets: [{
+                    data: [101, 54, 27, 15, 73], // 73 is the remaining (270 total - others)
+                    backgroundColor: [
+                        '#94a3b8', // Gray for Desinterés (Neutral)
+                        '#0067BE', // Blue3 for Judicial
+                        '#E63690', // Pink for Success/Conciliado
+                        '#F2A900', // Yellow for Errors
+                        '#00BBDE'  // Blue2 for Others
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { boxWidth: 12 } }
+                },
+                cutout: '65%'
+            }
+        });
+    </script>
+</body>
+</html>
